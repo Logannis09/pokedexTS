@@ -1,0 +1,6 @@
+
+> pokedex@1.0.0 dev
+> npx tsc && node dist/main.js
+
+src/commands.ts(45,13): error TS2322: Type '(state: State, ...args: string[]) => void' is not assignable to type '(state: State, ...args: string[]) => Promise<void>'.
+  Type 'void' is not assignable to type 'Promise<void>'.

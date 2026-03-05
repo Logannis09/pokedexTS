@@ -18,13 +18,14 @@ export async function startREPL(state: State) {
             return
         } else {
             const cmdName = words[0]
+            const cmdOptions = words.slice(1)
             const commands = getCommands()
             const cmd = commands[cmdName]
             if (!cmd) {
                 console.log("Unknown command")
             } else {
                 try {
-                    await cmd.callback(state);
+                    await cmd.callback(state, ...cmdOptions);
                 } catch (e) {
                     console.log((e as Error).message);
 

@@ -28,7 +28,6 @@ export class Cache {
         const limit = Date.now() - this.#interval
         for (const [key, value] of this.#cache) {
             if (value.createdAt < limit) {
-                console.log(`${key} has been deleted`)
                 this.#cache.delete(key)
             }
         }
